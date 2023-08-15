@@ -1,0 +1,24 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="isOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (onToggleSideBar)="getToggleRes()"> ></app-header>
+    <div class="container-fluid page">
+      <div class="d-flex page__box p-3 mt-2">Dashboard</div>
+      <div class="col-6">
+        <div
+          class="mat-elevation-z8"
+          style="background-color: white; margin-top: 15px"
+        >
+          <div class="chart-container">
+            <canvas id="MyChart" style="display: inline-block">{{
+              chart
+            }}</canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

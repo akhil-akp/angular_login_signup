@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row" style="margin-top: 25px">
+    <div>
+      <div class="card">
+        <p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
+      </div>
+    </div>
+  </div>
+
+  <a routerLink="../user/profile">User</a>
+  <br />
+  <div class="col-md-6">
+    <div class="card text-center">
+      <div class="card-header">Featured</div>
+      <a routerLink="/123456">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">
+            With supporting text below as a natural lead-in to additional
+            content.
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

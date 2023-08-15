@@ -1,0 +1,84 @@
+<!-- <div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Home</div>
+
+</div> -->
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="isOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (onToggleSideBar)="getToggleRes()"> ></app-header>
+    <div class="container-fluid page">
+      <div class="d-flex page__box p-3 mt-2">User Profile</div>
+
+      <div class="mat-elevation-z8">
+        <div class="container" style="background-color: white">
+          <div class="row">
+            <div class="col-4">
+              <div>
+                <img [src]="user.profileImage" alt="profile image" />
+              </div>
+              <br />
+              <div class="social">
+                <ul>
+                  <li>
+                    <strong> Facebook : </strong>
+                  </li>
+                  <li>
+                    <strong> Twitter : </strong>
+                  </li>
+                  <li>
+                    <strong> LinkedIn : </strong>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-8">
+              <ul>
+                <li>
+                  <strong>NAME :</strong>
+                  {{ user.firstName | uppercase }}
+                  {{ user.lastName | uppercase }}
+                </li>
+                <li>
+                  <strong>EMAIL :</strong>
+                  {{ user.email }}
+                </li>
+                <li>
+                  <strong>Mobile :</strong>
+                  {{ user.mobile }}
+                </li>
+                <li>
+                  <strong>DOB :</strong>
+                  {{ user.DOB }}
+                </li>
+                <li>
+                  <strong>GENDER :</strong>
+                  {{ user.gender }}
+                </li>
+              </ul>
+              <div class="profile-edit">
+                <a routerLinkActive="active" routerLink="/user/profile-edit"
+                  ><mat-icon>edit</mat-icon> Edit Profile</a
+                >
+
+                <!-- <button class="btn btn-secondary" style="margin-left: 25px">
+                  Update Password
+                </button> -->
+                <a
+                  style="margin-left: 15px"
+                  routerLinkActive="active"
+                  routerLink="/user/update-password"
+                >
+                  <mat-icon>edit</mat-icon> Update Password</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

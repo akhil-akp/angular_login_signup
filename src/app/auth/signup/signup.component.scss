@@ -1,0 +1,89 @@
+header {
+  background-color: #1976d2;
+  // box-shadow: 0 0 1px 1px #80808055;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  position: sticky;
+  padding: 20px 0px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.col-md-8 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #7b9dc0;
+}
+
+label {
+  // margin-top: 5px;
+  font-size: 85%;
+  font-weight: 600;
+}
+
+.col-md-6 {
+  align-items: center;
+}
+
+.btn-submit {
+  text-align: center;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid rgb(228, 7, 62);
+}
+
+p-password.ng-invalid.ng-touched {
+  border: 1px solid rgb(228, 7, 62);
+  border-radius: 7px;
+}
+
+p-inputNumber.ng-invalid.ng-touched {
+  border: 0.5px solid rgb(228, 7, 62);
+  border-radius: 8px;
+}
+option {
+  text-align: center;
+}
+
+:host ::ng-deep {
+  .p-password input,
+  .p-inputnumber input,
+  .p-calendar input {
+    width: 100%;
+    border-radius: 7px;
+    height: 37px;
+  }
+
+  .p-dropdown .p-dropdown-label.p-placeholder {
+    color: #6c757d;
+    padding: 2px;
+    padding-left: 5px;
+  }
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    padding: 0.5px 0.5px 0.5px 17.5px;
+  }
+
+  .p-dropdown {
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+    height: 35px;
+    align-items: center;
+  }
+}
+
+select {
+  margin-left: 5px;
+  width: 100px;
+  height: 27px;
+}
+
+input:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem #bfdbfe;
+  border-color: #3b82f6;
+}

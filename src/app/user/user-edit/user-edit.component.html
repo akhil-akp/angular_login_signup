@@ -1,0 +1,111 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="isOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (onToggleSideBar)="getToggleRes()"> ></app-header>
+    <div class="container-fluid page">
+      <div class="d-flex page__box p-3 mt-2">Edit Profile</div>
+
+      <div class="mat-elevation-z8">
+        <div class="container" style="background-color: #49515f">
+          <div class="row"></div>
+          <div style="color: black">
+            <a routerLink="/user/profile"
+              ><mat-icon style="color: white">arrow_back</mat-icon></a
+            >
+            <h4 style="font-weight: bold">Edit Profile</h4>
+            <form (ngSubmit)="onSubmit()" #f="ngForm">
+              <div>
+                <div class="form-group">
+                  <label for="firstname">First Name</label>
+                  <input
+                    type="text"
+                    id="firstname"
+                    class="form-control"
+                    name="firstname"
+                    [(ngModel)]="user.firstName"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="lastname">Last Name</label>
+                  <input
+                    type="text"
+                    id="lastname"
+                    class="form-control"
+                    name="lastname"
+                    [(ngModel)]="user.lastName"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="mobile">Mobile</label>
+                  <input
+                    type="text"
+                    id="mobile"
+                    class="form-control"
+                    name="mobile"
+                    [(ngModel)]="user.mobile"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="gender">Gender</label>
+                  <input
+                    type="text"
+                    id="gender"
+                    class="form-control"
+                    name="gender"
+                    [(ngModel)]="user.gender"
+                  />
+                  <!-- <select name="" id="">
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                    <option value="other">other</option>
+                  </select> -->
+                </div>
+                <div class="form-group">
+                  <label for="date">DOB</label>
+                  <input
+                    type="date"
+                    id="date"
+                    class="form-control"
+                    name="DOB"
+                    [(ngModel)]="user.DOB"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="profileimage">Profile Image : </label>
+                  <!-- <input
+                    type="file"
+                    id="profileimage"
+                    class="form-control"
+                    name="profileImage"
+                    [(ngModel)]="image"
+                  /> -->
+                  <input
+                    type="file"
+                    class="file-input"
+                    (change)="updateUserImage($event)"
+                  />
+                </div>
+              </div>
+              <br />
+              <p-toast position="top-center" key="topcenter"> </p-toast>
+              <button
+                class="btn btn-secondary"
+                type="submit"
+                style="margin-left: 42%"
+              >
+                Update
+              </button>
+              <!-- <button pRipple type="submit" class="btn btn-secondary">
+            Reset Password
+          </button> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

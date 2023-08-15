@@ -1,0 +1,16 @@
+<!-- <div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Home</div>
+
+</div> -->
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="isOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (onToggleSideBar)="getToggleRes()"> ></app-header>
+    <div class="container-fluid page">
+      <div class="d-flex page__box p-3 mt-2">Home</div>
+    </div>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

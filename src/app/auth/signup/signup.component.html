@@ -1,0 +1,292 @@
+<header class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]="['/']" style="font-weight: 600"
+        >StartupLynk Invest</a
+      >
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-12 mat-elevation-z8">
+      <a routerLink="/"
+        ><mat-icon style="color: rgb(0, 0, 0)">arrow_back</mat-icon></a
+      >
+      <h5 style="font-weight: bold; text-align: center">Signup</h5>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <!-- <div formGroupName="userData"> -->
+        <div class="row">
+          <div class="form-group col-md-6 col-12">
+            <label for="firstname"
+              >First Name
+              <span style="color: red; font-size: 120%">*</span></label
+            >
+            <input
+              type="text"
+              id="firstname"
+              class="form-control"
+              formControlName="firstName"
+            />
+            <span
+              class="help-block"
+              style="color: #af4852"
+              *ngIf="
+                !signupForm.get('firstName')?.valid &&
+                signupForm.get('firstName')?.touched
+              "
+              >first name is required !</span
+            >
+          </div>
+          <div class="form-group col-md-6 col-12">
+            <label for="lastname">Last Name</label>
+            <input
+              type="text"
+              id="lastname"
+              class="form-control"
+              formControlName="lastName"
+            />
+            <!-- <span
+              class="help-block"
+              style="color: #af4852"
+              *ngIf="
+                !signupForm.get('lastName')?.valid &&
+                signupForm.get('lastName')?.touched
+              "
+              >last name is required !</span
+            > -->
+          </div>
+          <div class="form-group col-md-6 col-12">
+            <label for="username"
+              >Username<span style="color: red; font-size: 120%">*</span></label
+            >
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              formControlName="username"
+            />
+            <span
+              class="help-block"
+              style="color: #af4852"
+              *ngIf="
+                !signupForm.get('username')?.valid &&
+                signupForm.get('username')?.touched
+              "
+              >username is required !</span
+            >
+          </div>
+          <!-- <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              formControlName="password"
+            />
+            <span
+              class="help-block"
+              style="color: #af4852"
+              *ngIf="
+                !signupForm.get('password')?.valid &&
+                signupForm.get('password')?.touched
+              "
+            >
+              password is required !</span
+            >
+          </div> -->
+          <div class="col-md-6 col-12">
+            <label for="passowrd"
+              >Password<span style="color: red; font-size: 120%">*</span></label
+            >
+            <p-password
+              type="password"
+              class="w-full"
+              formControlName="password"
+              [style]="{ width: '100%' }"
+              [inputStyle]="{ width: '100%' }"
+              [toggleMask]="true"
+            ></p-password>
+            <span
+              class="help-block"
+              style="color: #af4852"
+              *ngIf="
+                !signupForm.get('password')?.valid &&
+                signupForm.get('password')?.touched
+              "
+            >
+              password is required !</span
+            >
+          </div>
+          <div class="form-group col-md-6 col-12">
+            <label for="email"
+              >Email<span style="color: red; font-size: 120%">*</span></label
+            >
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              formControlName="email"
+            />
+            <span
+              class="help-block"
+              style="color: #af4852"
+              *ngIf="
+                !signupForm.get('email')?.valid &&
+                signupForm.get('email')?.touched
+              "
+            >
+              valid email is required !</span
+            >
+          </div>
+          <!-- <div class="form-group">
+          <label for="mobile"
+            >Mobile<span style="color: red; font-size: 120%">*</span></label
+          >
+          <input
+            type="tel"
+            class="form-control"
+            id="mobile"
+            formControlName="mobile"
+          />
+          <div
+            *ngIf="
+              !signupForm.get('mobile')?.valid &&
+              signupForm.get('mobile')?.touched
+            "
+          >
+            <div
+              *ngIf="signupForm.get('mobile')?.errors?.['required']"
+              style="color: #af4852"
+            >
+              mobile number is required !
+            </div>
+            <div
+              *ngIf="signupForm.get('mobile')?.errors?.['pattern']"
+              style="color: #af4852"
+            >
+              mobile number is not 10 digit !
+            </div>
+          </div>
+        </div> -->
+
+          <div class="form-group col-md-6 col-12">
+            <label for="mobile">Mobile<span style="color: red">*</span></label>
+            <p-inputNumber
+              formControlName="mobile"
+              mode="decimal"
+              inputId="withoutgrouping"
+              [useGrouping]="false"
+              [maxlength]="10"
+              class="w-full"
+              [style]="{ width: '100%' }"
+              [inputStyle]="{ width: '100%' }"
+            >
+            </p-inputNumber>
+            <div
+              *ngIf="
+                !signupForm.get('mobile')?.valid &&
+                signupForm.get('mobile')?.touched
+              "
+            >
+              <div
+                *ngIf="signupForm.get('mobile')?.errors?.['required']"
+                style="color: #af4852"
+              >
+                mobile number is required !
+              </div>
+              <div
+                *ngIf="signupForm.get('mobile')?.errors?.['pattern']"
+                style="color: #af4852"
+              >
+                mobile number is not 10 digit !
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6 col-12">
+            <label for="dob">DOB</label>
+            <input
+              type="date"
+              id="dob"
+              class="form-control"
+              max="{{ datePickerId }}"
+              formControlName="DOB"
+            />
+            <!-- <p-calendar
+            formControlName="DOB"
+            dateFormat="dd/mm/yy"
+            [maxDate]="datePickerId"
+          ></p-calendar> -->
+          </div>
+          <div class="form-group col-md-2 col-12" style="margin-top: 2px">
+            <label for="gender">Gender : </label>
+            <p-dropdown
+              class="gender"
+              formControlName="gender"
+              [options]="genders"
+              optionLabel="gender"
+              placeholder="select"
+              [showClear]="true"
+            ></p-dropdown>
+
+            <!-- <select
+              name="gender"
+              id="gender"
+              formControlName="gender"
+              style="margin-left: 5px"
+              placeholder="Select"
+            >
+              <option
+                value="null"
+                [selected]="'Select'"
+                style="color: rgb(116, 109, 109)"
+              >
+                select
+              </option>
+              <hr />
+              <option value="male">male</option>
+              <option value="female">female</option>
+              <option value="other">other</option>
+            </select> -->
+          </div>
+          <div class="form-group col-md-6 col-12" style="margin-right: 10px">
+            <label for="profile-image">Profile Image : </label>
+            <input
+              type="file"
+              class="file-input"
+              style="margin-left: 5px"
+              formControlName="profileImage"
+              (change)="uploadImage($event)"
+            />
+          </div>
+        </div>
+
+        <!-- <div formArrayName="hobbies">
+          <h4>Your Hobbies</h4>
+          <button class="btn btn-default" type="button" (click)="onAddHobby()">
+            Add Hobby
+          </button>
+          <div
+            class="form-group"
+            *ngFor="let hobbyControl of getControls(); let i = index"
+          >
+            <input type="text" class="form-control" [formControlName]="i" />
+          </div>
+        </div> -->
+        <!-- <div *ngFor="let gender of genders">
+          <label>
+            <input type="radio" formControlName="gender" [value]="gender" />
+            {{ gender }}
+          </label>
+        </div> -->
+
+        <br />
+        <div style="text-align: center">
+          <button class="btn btn-secondary" type="submit">Register</button>
+          <p-toast position="top-center" key="topcenter"> </p-toast>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,160 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-1">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">StartupLynk</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+
+        <div class="icon">
+          <a href="https://www.facebook.com/">
+            <i class="pi pi-facebook" style="color: #0879e9"></i>
+          </a>
+          <a href="https://web.whatsapp.com/">
+            <i class="pi pi-whatsapp" style="color: #00e676"></i>
+          </a>
+          <a href="https://www.instagram.com/">
+            <i class="pi pi-instagram"></i>
+          </a>
+          <a href="https://www.twitter.com/">
+            <i class="pi pi-twitter" style="color: #0879e9"></i>
+          </a>
+          <a href="https://in.linkedin.com/">
+            <i class="pi pi-linkedin" style="color: #0879e9"></i>
+          </a>
+        </div>
+        <!-- <form class="d-flex" role="search">
+          <input
+            class="form-control"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success ms-2" type="submit">
+            Search
+          </button> -->
+        <!-- </form> -->
+      </div>
+    </div>
+  </nav>
+  <!-- <header class="navbar navbar-fixed-top shadow-2">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <div class="navbar-brand">Header</div>
+      </div>
+    </div>
+  </header> -->
+  <div class="row">
+    <div class="col-md-3 col-12">
+      <div class="card justify-content-center menu-card">
+        <h4>sidmenu</h4>
+        <p-panelMenu [model]="items" [style]="{ width: '100%' }"></p-panelMenu>
+      </div>
+    </div>
+    <div class="col-md-9 col-12">
+      <!-- <div> -->
+      <!-- <p>Main content !!</p> -->
+
+      <form [formGroup]="dealForm" (ngSubmit)="onSubmit()">
+        <div class="row content">
+          <div class="form-group col-md-6 col-12">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              class="form-control"
+              formControlName="title"
+            />
+          </div>
+          <div class="form-group col-md-4 col-12">
+            <label for="amount">Amount</label>
+            <input
+              type="text"
+              id="amount"
+              class="form-control"
+              formControlName="amount"
+            />
+          </div>
+          <div class="col-md-1 col-12">
+            <label for="check">Confirm</label>
+            <p-checkbox
+              formControlName="isConfirm"
+              value="true"
+              inputId="binary"
+            ></p-checkbox>
+          </div>
+        </div>
+        <div class="row content">
+          <div class="col-12">
+            <label for="descriptions">Descriptions :</label>
+            <p-editor
+              formControlName="descriptions"
+              [style]="{ height: '150px' }"
+            ></p-editor>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-3 col-3">
+            <button class="btn btn-secondary" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+      <p>Descriptions:{{ dealForm.value.descriptions | htmlToText }}</p>
+      <!-- <div class="card">
+          <div class="card-header">Featured</div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">
+              With supporting text below as a natural lead-in to additional
+              content.
+            </p>
+
+          </div>
+        </div> -->
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
+
+<!-- <div class="card p-fluid">
+  <form [formGroup]="formGroup">
+    <p-chips formControlName="values"></p-chips>
+  </form>
+</div> -->
